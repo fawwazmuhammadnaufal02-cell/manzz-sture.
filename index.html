@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#100b18">
+<meta name="description" content="MANZZ STURE — toko online pilihanmu.">
+<title>MANZZ STURE | Official Store</title>
+<style>
+:root{--bg:#0c0911;--panel:#15101e;--panel2:#1d1529;--purple:#a855f7;--purple2:#7c3aed;--text:#f8f5ff;--muted:#b8adc8;--line:#352642;--danger:#fb7185;--good:#86efac}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top,#211034 0,#0c0911 48%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh}button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 28px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:#0c0911eF;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0}.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.7px}.logo{width:40px;height:40px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(135deg,var(--purple),#5b21b6);box-shadow:0 5px 22px #a855f744;font-weight:1000}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px}.nav-actions{display:flex;gap:8px;align-items:center}.btn{border:1px solid var(--line);border-radius:12px;padding:10px 13px;background:var(--panel2);color:var(--text);font-weight:750}.btn.primary{background:linear-gradient(135deg,var(--purple),var(--purple2));border-color:transparent}.btn.subtle{background:transparent}.btn.danger{color:#fecdd3;border-color:#7f1d35}.btn:active{transform:scale(.98)}
+.hero{padding:42px 0 28px;display:grid;grid-template-columns:1.3fr .7fr;gap:22px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:7px;border:1px solid #6b3a91;border-radius:999px;padding:7px 11px;color:#e9d5ff;font-size:12px;font-weight:800;background:#a855f71a}.hero h1{font-size:clamp(35px,6vw,62px);line-height:1.02;letter-spacing:-2px;margin:17px 0}.hero h1 span{color:#c084fc}.hero p{color:var(--muted);max-width:560px;line-height:1.7}.hero-card{border:1px solid #57356f;background:linear-gradient(145deg,#27133b,#140e1d);border-radius:24px;padding:24px;min-height:205px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 20px 70px #0005}.hero-card .big{font-size:42px;font-weight:950;letter-spacing:-2px}.hero-card p{margin:4px 0}.hero-card .spark{font-size:36px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 20px}.field{background:#100b18;border:1px solid var(--line);color:var(--text);border-radius:12px;padding:12px;width:100%;outline:none}.field:focus{border-color:var(--purple)}.search{flex:1;min-width:180px}.toolbar select{width:auto;min-width:145px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:24px 0 14px}.section-head h2{font-size:23px;margin:0}.section-head p{margin:4px 0 0;color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding-bottom:36px}.product{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#191222,#110d17);transition:transform .18s,border-color .18s}.product:hover{transform:translateY(-3px);border-color:#75449a}.product-img{height:165px;display:grid;place-items:center;background:radial-gradient(circle at 50% 25%,#55316d,#20132c 60%,#140e1d);overflow:hidden}.product-img img{width:100%;height:100%;object-fit:cover}.product-emoji{font-size:58px;filter:drop-shadow(0 10px 15px #0008)}.product-info{padding:13px}.tag{display:inline-block;font-size:10px;letter-spacing:.6px;text-transform:uppercase;border:1px solid #54316e;border-radius:999px;padding:4px 7px;color:#e9d5ff}.product h3{font-size:15px;margin:10px 0 5px;line-height:1.35}.desc{font-size:12px;line-height:1.5;color:var(--muted);min-height:35px}.price{font-size:17px;font-weight:900;margin:12px 0}.product-actions{display:flex;gap:7px}.product-actions .btn{flex:1;padding:9px 7px;font-size:12px}
+.empty{border:1px dashed #55376b;border-radius:18px;padding:32px;text-align:center;color:var(--muted);grid-column:1/-1}.footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:12px}.footer-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.overlay{position:fixed;inset:0;z-index:30;background:#0009;display:none;justify-content:flex-end}.overlay.show{display:flex}.drawer{width:min(470px,100%);height:100%;overflow:auto;background:#100b18;border-left:1px solid var(--line);padding:20px}.drawer-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.drawer-head h2{margin:0}.close{width:38px;height:38px;padding:0;font-size:21px}.cart-item{display:grid;grid-template-columns:1fr auto;gap:10px;padding:13px 0;border-bottom:1px solid var(--line)}.cart-item strong{display:block}.cart-item small{color:var(--muted)}.qty{display:flex;gap:7px;align-items:center;margin-top:9px}.qty button{width:28px;height:28px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:white}.cart-total{display:flex;justify-content:space-between;gap:10px;font-size:19px;font-weight:900;padding:20px 0}.form-stack{display:grid;gap:10px}.hint{font-size:12px;color:var(--muted);line-height:1.5}.notice{border:1px solid #76502b;background:#2a1c0d;color:#fde68a;border-radius:12px;padding:11px;font-size:12px;line-height:1.5;margin:12px 0}
+.modal{position:fixed;inset:0;background:#000b;z-index:40;display:none;align-items:center;justify-content:center;padding:14px}.modal.show{display:flex}.modal-box{width:min(680px,100%);max-height:92vh;overflow:auto;background:#120d1b;border:1px solid var(--line);border-radius:20px;padding:20px}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.modal-head h2{margin:0}.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.admin-grid .wide{grid-column:1/-1}.admin-list{display:grid;gap:8px;margin-top:14px}.admin-row{display:flex;justify-content:space-between;align-items:center;gap:8px;border:1px solid var(--line);border-radius:12px;padding:10px}.admin-row small{display:block;color:var(--muted)}.admin-actions{display:flex;gap:6px;flex-wrap:wrap}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#f3e8ff;color:#2e1048;padding:11px 16px;border-radius:12px;font-weight:800;z-index:60;display:none;max-width:calc(100% - 24px);box-shadow:0 10px 35px #0008}.toast.show{display:block}
+@media(max-width:850px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{grid-template-columns:1fr .65fr}.product-img{height:145px}}
+@media(max-width:620px){.wrap{width:min(100% - 22px,520px)}.nav{padding:10px 0}.brand{font-size:14px}.logo{width:36px;height:36px}.nav-actions .btn{padding:9px 10px;font-size:12px}.hero{padding:30px 0 15px;grid-template-columns:1fr;gap:15px}.hero h1{font-size:43px}.hero-card{min-height:130px;padding:17px}.hero-card .big{font-size:32px}.hero-card .spark{display:none}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-img{height:135px}.product-info{padding:10px}.product h3{font-size:14px}.desc{font-size:11px}.price{font-size:15px;margin:9px 0}.product-actions{flex-direction:column}.product-actions .btn{width:100%}.toolbar select{flex:1}.section-head h2{font-size:20px}.admin-grid{grid-template-columns:1fr}.admin-grid .wide{grid-column:auto}.drawer{padding:16px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#" aria-label="MANZZ STURE Beranda"><span class="logo">M</span><span>MANZZ STURE<small>OFFICIAL STORE</small></span></a>
+    <div class="nav-actions">
+      <button class="btn subtle" id="adminOpen" type="button">⚙ Admin</button>
+      <button class="btn primary" id="cartOpen" type="button">🛒 Keranjang <span id="cartCount">0</span></button>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <span class="eyebrow">✦ TOKO ONLINE PILIHANMU</span>
+      <h1>Belanja keren.<br><span>Harga bersahabat.</span></h1>
+      <p>Temukan produk favoritmu di MANZZ STURE. Pilih produk, masukkan ke keranjang, lalu selesaikan pesanan dengan mudah lewat WhatsApp.</p>
+      <a class="btn primary" href="#produk">Jelajahi Produk →</a>
+    </div>
+    <div class="hero-card">
+      <div class="spark">✦ ✧ ✦</div>
+      <div><div class="big">MANZZ<span style="color:#c084fc">.</span></div><p>Style your digital life.</p><span class="tag">BLACK × PURPLE EDITION</span></div>
+    </div>
+  </section>
+
+  <section id="produk">
+    <div class="section-head"><div><h2>Katalog Produk</h2><p>Pilih produk yang kamu inginkan.</p></div><span class="tag" id="productCount">0 PRODUK</span></div>
+    <div class="toolbar">
+      <input class="field search" id="searchInput" type="search" placeholder="Cari nama produk..." aria-label="Cari produk">
+      <select class="field" id="categoryFilter" aria-label="Filter kategori"><option value="">Semua kategori</option></select>
+      <select class="field" id="sortFilter" aria-label="Urutkan produk"><option value="default">Urutan default</option><option value="low">Harga terendah</option><option value="high">Harga tertinggi</option><option value="az">Nama A–Z</option></select>
+    </div>
+    <div class="grid" id="productGrid"></div>
+  </section>
+</main>
+<footer class="footer"><div class="wrap footer-row"><span>© <span id="year"></span> MANZZ STURE</span><span>Built with care ✦ Black & Purple</span></div></footer>
+
+<div class="overlay" id="cartOverlay" aria-hidden="true">
+  <aside class="drawer" role="dialog" aria-modal="true" aria-label="Keranjang belanja">
+    <div class="drawer-head"><h2>🛒 Keranjang Belanja</h2><button class="btn close" id="cartClose" aria-label="Tutup">×</button></div>
+    <div id="cartItems"></div>
+    <div class="cart-total"><span>Total</span><span id="cartTotal">Rp0</span></div>
+    <div class="form-stack">
+      <label>Nama pemesan<input class="field" id="buyerName" placeholder="Nama kamu" autocomplete="name"></label>
+      <label>Catatan pesanan (opsional)<textarea class="field" id="buyerNote" rows="2" placeholder="Contoh: warna pilihan, username game..."></textarea></label>
+      <button class="btn primary" id="checkoutBtn">Checkout via WhatsApp ↗</button>
+      <button class="btn" id="clearCart">Kosongkan keranjang</button>
+      <p class="hint">Checkout akan membuka WhatsApp dengan ringkasan pesanan. Periksa kembali harga dan detail pesanan sebelum mengirim pesan.</p>
+    </div>
+  </aside>
+</div>
+
+<div class="modal" id="adminModal" aria-hidden="true">
+  <section class="modal-box" role="dialog" aria-modal="true" aria-label="Pengaturan toko">
+    <div class="modal-head"><h2>⚙ Pengaturan Toko</h2><button class="btn close" id="adminClose" aria-label="Tutup">×</button></div>
+    <div class="notice">Pengaturan di halaman statis ini disimpan di browser perangkat ini saja. Untuk mengganti nomor WhatsApp, isi nomor aktif dengan kode negara (contoh Indonesia: 62812...). Panel ini bukan sistem admin aman untuk data rahasia.</div>
+    <h3>Nomor WhatsApp toko</h3>
+    <div class="form-stack">
+      <input class="field" id="waNumber" inputmode="numeric" placeholder="Contoh: 6281234567890" aria-label="Nomor WhatsApp toko">
+      <button class="btn primary" id="saveSettings">Simpan pengaturan</button>
+    </div>
+    <h3 style="margin-top:24px">Tambah / Edit Produk</h3>
+    <form id="productForm" class="admin-grid">
+      <input type="hidden" id="editId">
+      <label>Nama produk<input class="field" id="pName" required maxlength="80" placeholder="Nama produk"></label>
+      <label>Harga (Rupiah)<input class="field" id="pPrice" required type="number" min="0" step="100" placeholder="15000"></label>
+      <label>Kategori<input class="field" id="pCategory" required maxlength="40" placeholder="Contoh: Game"></label>
+      <label>Emoji / ikon<input class="field" id="pEmoji" maxlength="8" placeholder="🎮"></label>
+      <label class="wide">URL gambar (opsional)<input class="field" id="pImage" type="url" placeholder="https://contoh.com/gambar.jpg"></label>
+      <label class="wide">Deskripsi<input class="field" id="pDesc" maxlength="180" placeholder="Deskripsi singkat produk"></label>
+      <div class="wide" style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn primary" type="submit" id="saveProductBtn">Simpan produk</button><button class="btn" type="button" id="cancelEdit" hidden>Batal edit</button></div>
+    </form>
+    <div class="section-head"><div><h3>Daftar produk</h3><p>Perubahan tersimpan di browser ini.</p></div></div>
+    <div class="admin-list" id="adminProductList"></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:18px">
+      <button class="btn" id="exportData">Ekspor data JSON</button>
+      <button class="btn" id="resetProducts">Pulihkan produk contoh</button>
+    </div>
+    <p class="hint">Ekspor data bisa dijadikan cadangan. Agar perubahan terlihat oleh semua pengunjung, ubah daftar produk di kode website dan unggah ulang ke GitHub Pages.</p>
+  </section>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+"use strict";
+const DEFAULT_PRODUCTS = [
+ {id:"p1",name:"Paket Starter",price:15000,category:"Digital",emoji:"⚡",image:"",desc:"Pilihan awal untuk kebutuhan digitalmu."},
+ {id:"p2",name:"Paket Premium",price:35000,category:"Digital",emoji:"💎",image:"",desc:"Paket premium dengan nilai lebih."},
+ {id:"p3",name:"Voucher Game",price:20000,category:"Game",emoji:"🎮",image:"",desc:"Voucher untuk kebutuhan gaming."},
+ {id:"p4",name:"Item Eksklusif",price:25000,category:"Game",emoji:"👾",image:"",desc:"Lengkapi koleksi game favoritmu."},
+ {id:"p5",name:"Desain Logo",price:30000,category:"Jasa",emoji:"🎨",image:"",desc:"Layanan desain dengan gaya pilihan."},
+ {id:"p6",name:"Paket Spesial",price:50000,category:"Promo",emoji:"🌟",image:"",desc:"Paket pilihan untuk pelanggan."}
+];
+const STORAGE_PRODUCTS="manzz_sture_products_v1";
+const STORAGE_CART="manzz_sture_cart_v1";
+const STORAGE_SETTINGS="manzz_sture_settings_v1";
+const $=id=>document.getElementById(id);
+let products=loadJSON(STORAGE_PRODUCTS,DEFAULT_PRODUCTS);
+let cart=loadJSON(STORAGE_CART,{});
+let settings=loadJSON(STORAGE_SETTINGS,{whatsapp:""});
+function loadJSON(key,fallback){try{const v=JSON.parse(localStorage.getItem(key));return v??structuredCloneSafe(fallback)}catch{return structuredCloneSafe(fallback)}}
+function structuredCloneSafe(v){return JSON.parse(JSON.stringify(v))}
+function save(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true}catch{toast("Tidak bisa menyimpan di browser ini.");return false}}
+function escapeHTML(value){return String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function money(n){return new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(Number(n)||0)}
+function toast(message){const el=$("toast");el.textContent=message;el.classList.add("show");clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove("show"),2600)}
+function persistProducts(){save(STORAGE_PRODUCTS,products)}
+function getProduct(id){return products.find(p=>p.id===id)}
+function validImage(url){try{const u=new URL(url);return u.protocol==="https:"||u.protocol==="http:"}catch{return false}}
+function renderCategories(){
+ const select=$("categoryFilter"), current=select.value;
+ const cats=[...new Set(products.map(p=>p.category).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"id"));
+ select.innerHTML='<option value="">Semua kategori</option>'+cats.map(c=>`<option value="${escapeHTML(c)}">${escapeHTML(c)}</option>`).join("");
+ if(cats.includes(current))select.value=current;
+}
+function renderProducts(){
+ renderCategories();
+ const q=$("searchInput").value.trim().toLowerCase(),cat=$("categoryFilter").value,sort=$("sortFilter").value;
+ let list=products.filter(p=>(!q||(p.name+" "+p.desc+" "+p.category).toLowerCase().includes(q))&&(!cat||p.category===cat));
+ if(sort==="low")list.sort((a,b)=>a.price-b.price);if(sort==="high")list.sort((a,b)=>b.price-a.price);if(sort==="az")list.sort((a,b)=>a.name.localeCompare(b.name,"id"));
+ $("productCount").textContent=`${list.length} PRODUK`;
+ $("productGrid").innerHTML=list.length?list.map(p=>{
+  const img=validImage(p.image)?`<img loading="lazy" src="${escapeHTML(p.image)}" alt="${escapeHTML(p.name)}" onerror="this.remove()">`:"";
+  return `<article class="product"><div class="product-img">${img}<span class="product-emoji">${escapeHTML(p.emoji||"🛍️")}</span></div><div class="product-info"><span class="tag">${escapeHTML(p.category)}</span><h3>${escapeHTML(p.name)}</h3><div class="desc">${escapeHTML(p.desc||"Produk pilihan MANZZ STURE.")}</div><div class="price">${money(p.price)}</div><div class="product-actions"><button class="btn primary" data-add="${escapeHTML(p.id)}">+ Keranjang</button><button class="btn" data-buy="${escapeHTML(p.id)}">Beli</button></div></div></article>`;
+ }).join(""):`<div class="empty"><div style="font-size:32px">⌕</div><strong>Produk tidak ditemukan</strong><p>Coba kata kunci atau kategori lain.</p></div>`;
+}
+function cartQty(){return Object.values(cart).reduce((sum,n)=>sum+(Number(n)||0),0)}
+function cartTotal(){return Object.entries(cart).reduce((sum,[id,qty])=>{const p=getProduct(id);return sum+(p?Number(p.price)*Number(qty):0)},0)}
+function renderCart(){
+ for(const id of Object.keys(cart))if(!getProduct(id)||cart[id]<=0)delete cart[id];
+ save(STORAGE_CART,cart);
+ $("cartCount").textContent=cartQty();
+ const entries=Object.entries(cart).filter(([id,qty])=>getProduct(id)&&qty>0);
+ $("cartItems").innerHTML=entries.length?entries.map(([id,qty])=>{const p=getProduct(id);return `<div class="cart-item"><div><strong>${escapeHTML(p.name)}</strong><small>${money(p.price)} / item</small><div class="qty"><button data-dec="${escapeHTML(id)}" aria-label="Kurangi">−</button><span>${qty}</span><button data-inc="${escapeHTML(id)}" aria-label="Tambah">+</button></div></div><button class="btn danger" data-remove="${escapeHTML(id)}">Hapus</button></div>`}).join(""):`<div class="empty"><div style="font-size:32px">🛒</div><strong>Keranjang masih kosong</strong><p>Tambahkan produk dari katalog.</p></div>`;
+ $("cartTotal").textContent=money(cartTotal());
+}
+function addToCart(id){if(!getProduct(id))return;cart[id]=(cart[id]||0)+1;save(STORAGE_CART,cart);renderCart();toast("Produk ditambahkan ke keranjang.");}
+function openCart(){$("cartOverlay").classList.add("show");$("cartOverlay").setAttribute("aria-hidden","false");document.body.style.overflow="hidden"}
+function closeCart(){$("cartOverlay").classList.remove("show");$("cartOverlay").setAttribute("aria-hidden","true");document.body.style.overflow=""}
+function openAdmin(){$("adminModal").classList.add("show");$("adminModal").setAttribute("aria-hidden","false");$("waNumber").value=settings.whatsapp||"";renderAdminList();document.body.style.overflow="hidden"}
+function closeAdmin(){$("adminModal").classList.remove("show");$("adminModal").setAttribute("aria-hidden","true");document.body.style.overflow=""}
+function resetForm(){$("productForm").reset();$("editId").value="";$("cancelEdit").hidden=true;$("saveProductBtn").textContent="Simpan produk"}
+function renderAdminList(){
+ $("adminProductList").innerHTML=products.length?products.map(p=>`<div class="admin-row"><div><strong>${escapeHTML(p.name)}</strong><small>${money(p.price)} · ${escapeHTML(p.category)}</small></div><div class="admin-actions"><button class="btn" data-edit="${escapeHTML(p.id)}">Edit</button><button class="btn danger" data-delete="${escapeHTML(p.id)}">Hapus</button></div></div>`).join(""):'<div class="empty">Belum ada produk.</div>';
+}
+function startEdit(id){const p=getProduct(id);if(!p)return;$("editId").value=p.id;$("pName").value=p.name;$("pPrice").value=p.price;$("pCategory").value=p.category;$("pEmoji").value=p.emoji||"";$("pImage").value=p.image||"";$("pDesc").value=p.desc||"";$("cancelEdit").hidden=false;$("saveProductBtn").textContent="Simpan perubahan";$("pName").focus()}
+function checkout(){
+ const entries=Object.entries(cart).filter(([id,qty])=>getProduct(id)&&qty>0);
+ if(!entries.length){toast("Keranjang kamu masih kosong.");return}
+ const wa=String(settings.whatsapp||"").replace(/\D/g,"");
+ if(!wa){toast("Isi nomor WhatsApp toko lewat ⚙ Admin terlebih dahulu.");openAdmin();return}
+ if(wa.length<8||wa.length>15){toast("Nomor WhatsApp belum valid. Periksa kembali.");openAdmin();return}
+ const name=$("buyerName").value.trim()||"Belum diisi",note=$("buyerNote").value.trim();
+ const lines=["Halo MANZZ STURE, saya ingin memesan:","",`Nama: ${name}`,""];
+ entries.forEach(([id,qty],i)=>{const p=getProduct(id);lines.push(`${i+1}. ${p.name}`,`   ${qty} x ${money(p.price)} = ${money(p.price*qty)}`)});
+ lines.push("",`TOTAL: ${money(cartTotal())}`);if(note)lines.push("",`Catatan: ${note}`);lines.push("","Mohon konfirmasi ketersediaan dan detail pembayaran. Terima kasih.");
+ const url=`https://wa.me/${wa}?text=${encodeURIComponent(lines.join("\n"))}`;
+ window.open(url,"_blank","noopener,noreferrer");
+}
+document.addEventListener("click",e=>{
+ const t=e.target.closest("button");if(!t)return;
+ if(t.dataset.add)addToCart(t.dataset.add);
+ if(t.dataset.buy){addToCart(t.dataset.buy);openCart()}
+ if(t.dataset.inc){cart[t.dataset.inc]=(cart[t.dataset.inc]||0)+1;save(STORAGE_CART,cart);renderCart()}
+ if(t.dataset.dec){cart[t.dataset.dec]=Math.max(0,(cart[t.dataset.dec]||0)-1);save(STORAGE_CART,cart);renderCart()}
+ if(t.dataset.remove){delete cart[t.dataset.remove];save(STORAGE_CART,cart);renderCart()}
+ if(t.dataset.edit)startEdit(t.dataset.edit);
+ if(t.dataset.delete){const p=getProduct(t.dataset.delete);if(p&&confirm(`Hapus produk "${p.name}"?`)){products=products.filter(x=>x.id!==p.id);delete cart[p.id];persistProducts();save(STORAGE_CART,cart);renderProducts();renderCart();renderAdminList();toast("Produk dihapus.")}}
+});
+$("searchInput").addEventListener("input",renderProducts);$("categoryFilter").addEventListener("change",renderProducts);$("sortFilter").addEventListener("change",renderProducts);
+$("cartOpen").addEventListener("click",openCart);$("cartClose").addEventListener("click",closeCart);$("cartOverlay").addEventListener("click",e=>{if(e.target===$("cartOverlay"))closeCart()});
+$("adminOpen").addEventListener("click",openAdmin);$("adminClose").addEventListener("click",closeAdmin);$("adminModal").addEventListener("click",e=>{if(e.target===$("adminModal"))closeAdmin()});
+$("checkoutBtn").addEventListener("click",checkout);
+$("clearCart").addEventListener("click",()=>{if(!cartQty())return;if(confirm("Kosongkan semua isi keranjang?")){cart={};save(STORAGE_CART,cart);renderCart();toast("Keranjang dikosongkan.")}});
+$("saveSettings").addEventListener("click",()=>{const number=$("waNumber").value.replace(/\D/g,"");if(number.length<8||number.length>15){toast("Masukkan nomor WhatsApp dengan kode negara, misalnya 62812...");return}settings.whatsapp=number;save(STORAGE_SETTINGS,settings);toast("Nomor WhatsApp tersimpan di browser ini.")});
+$("productForm").addEventListener("submit",e=>{
+ e.preventDefault();const id=$("editId").value||("p"+Date.now().toString(36)+Math.random().toString(36).slice(2,6));
+ const name=$("pName").value.trim(),price=Number($("pPrice").value),category=$("pCategory").value.trim(),image=$("pImage").value.trim();
+ if(!name||!category||!Number.isFinite(price)||price<0){toast("Periksa nama, kategori, dan harga produk.");return}
+ if(image&&!validImage(image)){toast("URL gambar harus berupa alamat HTTP atau HTTPS yang valid.");return}
+ const p={id,name,price,category,emoji:$("pEmoji").value.trim()||"🛍️",image,desc:$("pDesc").value.trim()};
+ const index=products.findIndex(x=>x.id===id);if(index>=0)products[index]=p;else products.unshift(p);
+ persistProducts();renderProducts();renderCart();renderAdminList();resetForm();toast(index>=0?"Produk diperbarui.":"Produk ditambahkan.");
+});
+$("cancelEdit").addEventListener("click",resetForm);
+$("resetProducts").addEventListener("click",()=>{if(confirm("Pulihkan katalog ke produk contoh? Produk yang kamu buat akan diganti.")){products=structuredCloneSafe(DEFAULT_PRODUCTS);persistProducts();renderProducts();renderCart();renderAdminList();resetForm();toast("Produk contoh dipulihkan.")}});
+$("exportData").addEventListener("click",()=>{const blob=new Blob([JSON.stringify({products,settings},null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="manzz-sture-data.json";a.click();URL.revokeObjectURL(url);toast("Cadangan data diunduh.")});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeCart();closeAdmin()}});
+$("year").textContent=new Date().getFullYear();
+renderProducts();renderCart();
+</script>
+</body>
+</html>
